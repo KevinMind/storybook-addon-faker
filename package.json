@@ -1,15 +1,18 @@
 {
-  "name": "storybook-addon-kit",
+  "name": "storybook-addon-faker",
   "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "mock storybook data with a pre-seeded faker instance and control randomization from the ui",
   "keywords": [
+    "storybook-addons",
+    "faker",
+    "mock",
     "storybook-addons"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/KevinMind/storybook-addon-faker"
   },
-  "author": "package-author",
+  "author": "Kevin Meinhardt <kmeinhardt7@gmail.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -21,7 +24,6 @@
     "*.d.ts"
   ],
   "scripts": {
-    "postinstall": "node scripts/welcome.js",
     "clean": "rimraf ./dist",
     "buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
     "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
@@ -44,13 +46,17 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "@babel/preset-typescript": "^7.13.0",
+    "@faker-js/faker": "^7.5.0",
     "@storybook/addon-essentials": "^6.5.8",
     "@storybook/react": "^6.5.8",
     "auto": "^10.3.0",
     "babel-loader": "^8.1.0",
     "boxen": "^5.0.1",
+    "chromatic": "^6.10.1",
     "concurrently": "^6.2.0",
     "dedent": "^0.7.0",
+    "msw": "^0.47.4",
+    "msw-storybook-addon": "^1.6.3",
     "prettier": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -60,11 +66,13 @@
     "zx": "^1.14.1"
   },
   "peerDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "@storybook/addons": "^6.5.8",
     "@storybook/api": "^6.5.8",
     "@storybook/components": "^6.5.8",
     "@storybook/core-events": "^6.5.8",
     "@storybook/theming": "^6.5.8",
+    "chromatic": "^6.10.1",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
@@ -80,9 +88,9 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Storybook addon faker",
     "supportedFrameworks": [
-      "supported-frameworks"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
