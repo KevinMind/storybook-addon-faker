@@ -1,0 +1,15 @@
+[34mseed-story:build[0m: cache hit, replaying output [2m5f0294da85ee3623[0m
+[34mseed-story:build: [0m$ tsup src/index.tsx --format esm,cjs --dts --external react
+[34mseed-story:build: [0mCLI Building entry: src/index.tsx
+[34mseed-story:build: [0mCLI Using tsconfig: tsconfig.json
+[34mseed-story:build: [0mCLI tsup v5.12.9
+[34mseed-story:build: [0mCLI Target: node12
+[34mseed-story:build: [0mESM Build start
+[34mseed-story:build: [0mCJS Build start
+[34mseed-story:build: [0mESM ⚡️ Build success in 13ms
+[34mseed-story:build: [0mCJS ⚡️ Build success in 9ms
+[34mseed-story:build: [0mCJS dist/index.js 1.73 KB
+[34mseed-story:build: [0mESM dist/index.mjs 396.00 B
+[34mseed-story:build: [0mDTS Build start
+[34mseed-story:build: [0mDTS ⚡️ Build success in 1046ms
+[34mseed-story:build: [0mDTS dist/index.d.ts 223.00 B

@@ -1,0 +1,19 @@
+[33mstorybook-addon-faker-babel-plugin:build[0m: cache hit, replaying output [2me515bbea9b647dec[0m
+[33mstorybook-addon-faker-babel-plugin:build: [0m$ tsup src/** --format esm,cjs --dts --external react
+[33mstorybook-addon-faker-babel-plugin:build: [0mCLI Building entry: src/index.tsx, src/plugin.ts
+[33mstorybook-addon-faker-babel-plugin:build: [0mCLI Using tsconfig: tsconfig.json
+[33mstorybook-addon-faker-babel-plugin:build: [0mCLI tsup v5.12.9
+[33mstorybook-addon-faker-babel-plugin:build: [0mCLI Target: node12
+[33mstorybook-addon-faker-babel-plugin:build: [0mESM Build start
+[33mstorybook-addon-faker-babel-plugin:build: [0mCJS Build start
+[33mstorybook-addon-faker-babel-plugin:build: [0mESM ⚡️ Build success in 11ms
+[33mstorybook-addon-faker-babel-plugin:build: [0mCJS ⚡️ Build success in 8ms
+[33mstorybook-addon-faker-babel-plugin:build: [0mESM dist/chunk-Q3DRXK4Z.mjs 1.51 KB
+[33mstorybook-addon-faker-babel-plugin:build: [0mESM dist/index.mjs          129.00 B
+[33mstorybook-addon-faker-babel-plugin:build: [0mESM dist/plugin.mjs         129.00 B
+[33mstorybook-addon-faker-babel-plugin:build: [0mCJS dist/index.js  2.49 KB
+[33mstorybook-addon-faker-babel-plugin:build: [0mCJS dist/plugin.js 2.48 KB
+[33mstorybook-addon-faker-babel-plugin:build: [0mDTS Build start
+[33mstorybook-addon-faker-babel-plugin:build: [0mDTS ⚡️ Build success in 998ms
+[33mstorybook-addon-faker-babel-plugin:build: [0mDTS dist/index.d.ts  84.00 B
+[33mstorybook-addon-faker-babel-plugin:build: [0mDTS dist/plugin.d.ts 404.00 B

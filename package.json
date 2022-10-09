@@ -1,6 +1,7 @@
 {
   "name": "storybook-addon-faker",
   "version": "0.0.0",
+  "private": true,
   "description": "mock storybook data with a pre-seeded faker instance and control randomization from the ui",
   "keywords": [
     "storybook-addons",
@@ -23,7 +24,7 @@
     "*.js",
     "*.d.ts"
   ],
-  "scripts": {
+  "_scripts": {
     "clean": "rimraf ./dist",
     "buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
     "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
@@ -40,7 +41,20 @@
     "release": "yarn build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.mjs"
   },
-  "devDependencies": {
+  "scripts": {
+    "generate:package": "plop --plopfile plop/scripts/package.js",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "test": "turbo run test",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook",
+    "chromatic": "turbo run chromatic",
+    "storybook:global": "start-storybook -p 4004",
+    "build-storybook:global": "build-storybook"
+  },
+  "_devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -66,10 +80,18 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
+    "turbo": "^1.5.5",
     "typescript": "^4.2.4",
     "webpack-inject-plugin": "^1.5.5",
     "webpack-merge": "^5.8.0",
     "zx": "^1.14.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "babel-loader": "^8.2.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "plop": "^3.0.5",
+    "turbo": "^1.1.6"
   },
   "peerDependencies": {
     "@faker-js/faker": "^7.5.0",
@@ -99,5 +121,8 @@
       "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

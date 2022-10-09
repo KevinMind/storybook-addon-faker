@@ -11,10 +11,8 @@ export function useFakerSeed() {
       updateGlobals({
         addonFaker: addonFaker ? undefined : true,
       }),
-    [addonFaker]
+    [addonFaker, updateGlobals]
   );
-
-  console.log({paramData, addonFaker});
 
   return {
     toggleCustomFakerSeed,
