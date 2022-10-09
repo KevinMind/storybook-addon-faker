@@ -17,17 +17,16 @@ function useLogin(id: string) {
     setLoading(true);
     try {
       const response = await fetch(`/user/${id}`);
-      const user = await response.json() as User;
+      const user = (await response.json()) as User;
 
       if (Boolean(user)) {
-        console.log({response, user});
+        console.log({ response, user });
         setUser(user);
         setLoading(false);
       }
     } catch (error) {
-      console.error('error fetching user', error);
+      console.error("error fetching user", error);
     }
-
   }
 
   return {
@@ -39,7 +38,7 @@ function useLogin(id: string) {
 }
 
 export const Page = () => {
-  const {user, login, logout} = useLogin('2');
+  const { user, login, logout } = useLogin("2");
 
   return (
     <article>

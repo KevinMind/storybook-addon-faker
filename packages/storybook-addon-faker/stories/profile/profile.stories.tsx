@@ -1,8 +1,8 @@
-import {ComponentProps} from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import {faker} from '@faker-js/faker';
+import { ComponentProps } from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { faker } from "@faker-js/faker";
 
-import {Profile} from  './Profile';
+import { Profile } from "./Profile";
 
 type Story = StoryObj<ComponentProps<typeof Profile>>;
 
@@ -14,8 +14,7 @@ export const Default: Story = {
   args: {
     title: faker.name.fullName(),
     image: faker.image.avatar(),
-  }
+  },
 };
 
 export default meta;
-
