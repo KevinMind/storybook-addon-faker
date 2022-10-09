@@ -1,14 +1,12 @@
-import React from 'react';
-import { Meta } from '@storybook/react';
-import {faker} from '@faker-js/faker';
+import { Meta, StoryObj } from '@storybook/react';
 import { rest } from 'msw'
 import { within, userEvent } from '@storybook/testing-library';
 
-import {seedStory} from '../seedStory'
 import { Page } from './Page';
 import { User, mockUser } from '../user';
+import { ComponentProps } from 'react';
 
-export default {
+const meta: Meta<typeof Page> = {
   component: Page,
   parameters: {
     layout: 'fullscreen',
@@ -23,17 +21,18 @@ export default {
       ]
     },
   },
-} as Meta<typeof Page>;
+};
 
-console.log('buildingNumber', faker.address.buildingNumber());
+type Story = StoryObj<ComponentProps<typeof Page>>;
 
-// More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
-export const LoggedOut = seedStory();
+export const LoggedOut: Story = {};
 
-export const LoggedIn = seedStory({
+export const LoggedIn: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const loginButton = await canvas.getByRole('button', { name: /Log in/i });
     await userEvent.click(loginButton);
   },
-});
+};
+
+export default meta;

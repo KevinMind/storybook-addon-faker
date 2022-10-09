@@ -2,8 +2,6 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 import { faker } from '@faker-js/faker';
 
-import {seedStory} from './seedStory';
-
 const filtered = [
   'faker',
   'lorempicsum',
@@ -51,61 +49,61 @@ const meta: Meta<typeof Faker> = {
   component: Faker,
 };
 
-export const Address = seedStory(() => ({
+export const Address = {
   args: mapModule('address'),
-}));
+};
 
-export const Animal = seedStory(() => ({
+export const Animal = {
   args: mapModule('animal'),
-}));
+};
 
-export const Color = seedStory(() => ({
+export const Color = {
   args: mapModule('color'),
-}));
+};
 
-export const Commerce = seedStory(() => ({
+export const Commerce = {
   args: mapModule('commerce'),
-}));
+};
 
-export const Company = seedStory(() => ({
+export const Company = {
   args: mapModule('company'),
-}));
+};
 
-export const DataBase = seedStory(() => ({
+export const DataBase = {
   args: mapModule('database'),
-}));
+};
 
-export const DataTypeField = seedStory(() => ({
+export const DataTypeField = {
   args: mapModule('datatype', (key ,func) => {
     return String(func());
   }),
-}));
+};
 
-export const Date = seedStory(() => ({
+export const Date = {
   args: mapModule('date'),
-}));
+};
 
-export const Fake = seedStory(() => ({
+export const Fake = {
   args: {
     fake: mapModule('fake', (_key, func) => {
       return func('Hi, my name is {{name.firstName}} {{name.lastName}}!');
     }),
   },
-}));
+};
 
-export const Finance = seedStory(() => ({
+export const Finance = {
   args: mapModule('finance'),
-}));
+};
 
-export const Git = seedStory(() => ({
+export const Git = {
   args: mapModule('git'),
-}));
+};
 
-export const Hacker = seedStory(() => ({
+export const Hacker = {
   args: mapModule('hacker'),
-}));
+};
 
-export const Hepers = seedStory(() => ({
+export const Hepers = {
   args: mapModule('helpers', (key, func) => {
     switch (key) {
       case 'arrayElement':
@@ -143,63 +141,63 @@ export const Hepers = seedStory(() => ({
         return `key:${key}`;
     }
   }),
-}));
+};
 
-export const Image = seedStory(() => ({
+export const Image = {
   args: mapModule('image'),
-}));
+};
 
-export const Internet = seedStory(() => ({
+export const Internet = {
   args: mapModule('internet'),
-}));
+};
 
-export const Lorem = seedStory(() => ({
+export const Lorem = {
   args: mapModule('lorem'),
-}));
+};
 
-export const Mersenne = seedStory(() => ({
+export const Mersenne = {
   args: mapModule('mersenne', (key, func) => {
     if (key === 'rand') {
       return func();
     }
     return key;
   }),
-}));
+};
 
-export const Music = seedStory(() => ({
+export const Music = {
   args: mapModule('music'),
-}));
+};
 
-export const Name = seedStory(() => ({
+export const Name = {
   args: mapModule('name'),
-}));
+};
 
-export const Phone = seedStory(() => ({
+export const Phone = {
   args: mapModule('phone'),
-}));
+};
 
-export const Random = seedStory(() => ({
+export const Random = {
   args: mapModule('random'),
-}));
+};
 
-export const Science = seedStory(() => ({
+export const Science = {
   args: mapModule('science'),
-}));
+};
 
-export const System = seedStory(() => ({
+export const System = {
   args: mapModule('system'),
-}));
+};
 
-export const Unique = seedStory(() => ({
+export const Unique = {
   args: mapModule('unique', (_, func) => func(faker.name.firstName)),
-}));
+};
 
-export const Vehicle = seedStory(() => ({
+export const Vehicle = {
   args: mapModule('vehicle'),
-}));
+};
 
-export const Word = seedStory(() => ({
+export const Word = {
   args: mapModule('word'),
-}));
+};
 
 export default meta;

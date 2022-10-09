@@ -1,14 +1,8 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
-import {faker} from '@faker-js/faker';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { User, mockUser } from '../user';
+import { mockUser } from '../user';
 import { Header } from './Header';
-import { seedStory } from '../seedStory';
-
-console.log('buildingNumber', faker.address.buildingNumber());
-
-
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -18,17 +12,16 @@ const meta: Meta<typeof Header> = {
   },
 };
 
-type Props = React.ComponentProps<typeof Header>;
+type Story = StoryObj<React.ComponentProps<typeof Header>>;
 
-export const LoggedIn = seedStory<Props>(() => ({
+export const LoggedIn: Story = {
   args: {
     user: mockUser(),
   }
-}));
+};
 
-console.log('buildingNumber', faker.address.buildingNumber());
-export const LoggedOut = seedStory<Props>(() => ({
+export const LoggedOut: Story = {
   args: {},
-}));
+};
 
 export default meta;

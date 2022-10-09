@@ -2,7 +2,6 @@ import React from 'react';
 import {faker} from '@faker-js/faker';
 
 import { Button } from './Button';
-import { seedStory } from '../seedStory';
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
@@ -21,26 +20,22 @@ export default {
   },
 };
 
-export const Secondary = seedStory(() => ({
+export const Secondary = {
   args: mockButtonProps({primary: false}),
-}));
+};
 
-console.log('call', faker.address.cardinalDirection());
-
-export const Primary = seedStory(() => ({
+export const Primary = {
   args: mockButtonProps({primary: true}),
-}));
+};
 
-console.log('call', faker.address.cardinalDirection());
-
-export const Large = seedStory(() => ({
+export const Large = {
   args: mockButtonProps({
     size: 'large',
   }),
-}));
+};
 
-export const Small = seedStory(() => ({
+export const Small = {
   args: mockButtonProps({
     size: 'small',
   }),
-}));
+};
