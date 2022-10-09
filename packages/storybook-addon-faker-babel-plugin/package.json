@@ -2,18 +2,15 @@
   "name": "storybook-addon-faker-babel-plugin",
   "version": "0.0.0",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "sideEffects": false,
-  "private": true,
   "license": "MIT",
   "files": [
     "dist/**"
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsup src/** --format esm,cjs --dts --external react",
-    "dev": "tsup src/** --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --format cjs --dts --external react",
+    "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
@@ -30,5 +27,10 @@
   },
   "jest": {
     "preset": "scripts/jest/node"
-  }
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "type": "commonjs"
 }

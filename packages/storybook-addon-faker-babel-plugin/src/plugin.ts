@@ -26,6 +26,7 @@ export default function storybookAddonFakerBabelPlugin({
         path.unshiftContainer("body", importDeclaration);
       },
       ExportNamedDeclaration(path) {
+        console.log("ExportNamedDeclaration", path.node);
         debugger;
         const exportedDeclaration = path.node.declaration;
 
