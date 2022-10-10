@@ -1,9 +1,11 @@
-## TOdo
-- fix imports in the storybook addon webpack config, use real imports
-- update package names
-- figure out deployment flow
-- add tests
-- extract the storybook(s) from the storybook addon
+## Todo
+- [ ] fix imports in the storybook addon webpack config, use real imports
+- [ ] update package names
+- [ ] figure out deployment flow
+- [ ] add tests
+- [X] extract the storybook(s) from the storybook addon
+- [ ] extract faker import, seed value and isSeedActive functions to babel plugin params or webpack plugin params? or global functions
+- [ ] extract stories and components from examples to base example
 
 # Storybook Addon Storybook addon faker
 mock storybook data with a pre-seeded faker instance and control randomization from the ui

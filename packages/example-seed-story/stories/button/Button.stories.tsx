@@ -1,5 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker/locale/en";
+import { seedStory } from "seed-story";
 
 import { Button } from "./Button";
 
@@ -24,22 +25,22 @@ export default {
   },
 };
 
-export const Secondary = {
+export const Secondary = seedStory(() => ({
   args: mockButtonProps({ primary: false }),
-};
+}));
 
-export const Primary = {
+export const Primary = seedStory(() => ({
   args: mockButtonProps({ primary: true }),
-};
+}));
 
-export const Large = {
+export const Large = seedStory(() => ({
   args: mockButtonProps({
     size: "large",
   }),
-};
+}));
 
-export const Small = {
+export const Small = seedStory(() => ({
   args: mockButtonProps({
     size: "small",
   }),
-};
+}));

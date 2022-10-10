@@ -1,6 +1,6 @@
 {
   "name": "seed-story",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsup src/index.tsx --format cjs --dts --external @faker-js/faker",
+    "build": "tsup src/index.ts --format cjs --dts --external @faker-js/faker",
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",

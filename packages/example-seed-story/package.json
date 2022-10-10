@@ -1,0 +1,46 @@
+{
+  "name": "storybook-addon-faker-example-seed-story",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "TIMING=1 eslint src",
+    "format": "yarn lint --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "yarn storybook",
+    "storybook": "start-storybook -p 6008",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.1",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "msw": "^0.47.4",
+    "msw-storybook-addon": "^1.6.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "scripts": "*",
+    "seed-story": "*",
+    "tsconfig": "*",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3"
+  },
+  "jest": {
+    "preset": "scripts/jest/node"
+  }
+}
