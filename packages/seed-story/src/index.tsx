@@ -11,7 +11,7 @@ interface SeedStoryOptions {
 }
 
 const defaultSeedOptions: SeedStoryOptions = {
-  isSeedActive: () => false,
+  isSeedActive: () => isChromatic(),
   seed: STORYBOOK_FAKER_SEED,
   faker,
 };
@@ -29,14 +29,16 @@ export function seedStory<Args>(
   input: Partial<SeedStoryOptions> = {}
 ): StoryObj<Args> {
   const options = getOptions(input);
+
+  const shouldSeed = options.isSeedActive();
   console.log({
     ...options,
-    isSeedActive: options.isSeedActive(),
+    isSeedActive: shouldSeed,
   });
 
-  if (isChromatic()) {
-    faker.seed(STORYBOOK_FAKER_SEED);
+  if (shouldSeed) {
+    options.faker.seed(STORYBOOK_FAKER_SEED);
   }
 
-  return getStoryObj(faker);
+  return getStoryObj(options.faker);
 }
