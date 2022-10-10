@@ -1,24 +1,21 @@
 import { StoryObj } from "@storybook/react";
 import isChromatic from "chromatic/isChromatic";
-import { faker, Faker } from "@faker-js/faker";
+import { Faker } from "@faker-js/faker";
 
 // TODO: replace with environment variable or some configurable parameter
 const STORYBOOK_FAKER_SEED = 12345;
 interface SeedStoryOptions {
-  isSeedActive: () => boolean;
   seed: number;
-  faker: Faker;
+  faker: string;
 }
 
 const defaultSeedOptions: SeedStoryOptions = {
-  isSeedActive: () => isChromatic(),
   seed: STORYBOOK_FAKER_SEED,
-  faker,
+  faker: "@faker-js/faker",
 };
 
 function getOptions(input: Partial<SeedStoryOptions> = {}): SeedStoryOptions {
   return {
-    isSeedActive: input?.isSeedActive ?? defaultSeedOptions.isSeedActive,
     seed: input?.seed ?? defaultSeedOptions.seed,
     faker: input?.faker ?? defaultSeedOptions.faker,
   };
@@ -30,15 +27,12 @@ export function seedStory<Args>(
 ): StoryObj<Args> {
   const options = getOptions(input);
 
-  const shouldSeed = options.isSeedActive();
-  console.log({
-    ...options,
-    isSeedActive: shouldSeed,
-  });
+  const isSeedActive = isChromatic();
+  const faker = require(options.faker) as Faker;
 
-  if (shouldSeed) {
-    options.faker.seed(STORYBOOK_FAKER_SEED);
+  if (isSeedActive) {
+    faker.seed(options.seed);
   }
 
-  return getStoryObj(options.faker);
+  return getStoryObj(faker);
 }

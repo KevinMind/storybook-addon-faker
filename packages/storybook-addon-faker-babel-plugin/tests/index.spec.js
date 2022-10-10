@@ -1,10 +1,14 @@
-const pluginTester = require('babel-plugin-tester').default;
+const pluginTester = require("babel-plugin-tester").default;
 
-const plugin =  require('../plugin');
+const plugin = require("../dist/index").default;
 
-const path = require('path');
+const path = require("path");
 
 pluginTester({
   plugin,
-  fixtures: path.join(__dirname, 'fixtures')
+  pluginOptions: {
+    seed: 123,
+    faker: "@faker-js/faker/locales/en",
+  },
+  fixtures: path.join(__dirname, "fixtures"),
 });
