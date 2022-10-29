@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"],
+    "jsx": "react"
+  },
+  "extends": "tsconfig/react-library.json",
+  "include": [".", ".eslintrc.js", "../.storybook"],
+  "exclude": ["dist", "build", "node_modules"]
+}
