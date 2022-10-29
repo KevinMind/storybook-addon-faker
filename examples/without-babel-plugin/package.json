@@ -1,5 +1,5 @@
 {
-  "name": "with-seed-story",
+  "name": "without-babel-plugin",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -11,7 +11,6 @@
     "dist/**"
   ],
   "scripts": {
-    "test": "jest",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",

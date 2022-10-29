@@ -1,22 +1,8 @@
-import React from "react";
-import { faker } from "@faker-js/faker/locale/en";
 import { seedStory } from "seed-story";
+import { faker } from "@faker-js/faker";
 
-import { Button } from "./Button";
-
-type ButtonProps = React.ComponentProps<typeof Button>;
-
-function mockButtonProps(input: Partial<ButtonProps>): ButtonProps {
-  return {
-    label: faker.word.verb(),
-    size: faker.helpers.arrayElement<ButtonProps["size"]>([
-      "small",
-      "medium",
-      "large",
-    ]),
-    ...input,
-  };
-}
+import { Button } from "../../../.storybook/stories/button/Button";
+import * as Stories from "../../../.storybook/stories/button/Button.stories";
 
 export default {
   component: Button,
@@ -25,22 +11,15 @@ export default {
   },
 };
 
-export const Secondary = seedStory(() => ({
-  args: mockButtonProps({ primary: false }),
-}));
+const options = {
+  faker,
+  seed: 123,
+};
 
-export const Primary = seedStory(() => ({
-  args: mockButtonProps({ primary: true }),
-}));
+export const Secondary = seedStory(() => Stories.Secondary, options);
 
-export const Large = seedStory(() => ({
-  args: mockButtonProps({
-    size: "large",
-  }),
-}));
+export const Primary = seedStory(() => Stories.Primary, options);
 
-export const Small = seedStory(() => ({
-  args: mockButtonProps({
-    size: "small",
-  }),
-}));
+export const Large = seedStory(() => Stories.Large, options);
+
+export const Small = seedStory(() => Stories.Small, options);

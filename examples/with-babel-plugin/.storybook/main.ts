@@ -1,11 +1,9 @@
 import { StorybookConfig } from "@storybook/react/types";
 
-const config: StorybookConfig = {
-  stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
-  addons: ["storybook-addon-faker", "@storybook/addon-essentials"],
+import createConfig from "../../.storybook/main";
+
+const config: StorybookConfig = createConfig({
+  addons: ["storybook-addon-faker"],
   webpackFinal: async (config) => {
     config.module = {
       ...config.module,
@@ -16,12 +14,17 @@ const config: StorybookConfig = {
       test: /.stories.(js|jsx|ts|tsx)$/,
       loader: "babel-loader",
       options: {
-        plugins: [[require.resolve("storybook-addon-faker-babel-plugin"), {seed: 634}]],
+        plugins: [
+          [
+            require.resolve("storybook-addon-faker-babel-plugin"),
+            { seed: 634 },
+          ],
+        ],
       },
     });
 
     return config;
   },
-};
+});
 
 export default config;

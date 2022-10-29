@@ -4,6 +4,6 @@
     "jsx": "react"
   },
   "extends": "tsconfig/react-library.json",
-  "include": [".", ".eslintrc.js"],
+  "include": [".", ".eslintrc.js", "../.storybook"],
   "exclude": ["dist", "build", "node_modules"]
 }
