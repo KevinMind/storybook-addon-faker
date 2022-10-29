@@ -1,5 +1,5 @@
 {
-  "name": "with-babel-plugin",
+  "name": "{{name}}",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -11,10 +11,11 @@
     "dist/**"
   ],
   "scripts": {
+    "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "yarn storybook",
-    "storybook": "start-storybook -p 6000 --quiet",
+    "storybook": "start-storybook -p {{port}} --quiet",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
@@ -33,9 +34,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "scripts": "*",
-    "storybook-addon-faker": "*",
-    "storybook-addon-faker-babel-plugin": "*",
-    "seed-story": "*",
     "tsconfig": "*",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"

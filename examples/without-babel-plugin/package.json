@@ -11,11 +11,10 @@
     "dist/**"
   ],
   "scripts": {
-    "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "yarn storybook",
-    "storybook": "start-storybook -p 6008 --quiet",
+    "storybook": "start-storybook -p 6002 --quiet",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {

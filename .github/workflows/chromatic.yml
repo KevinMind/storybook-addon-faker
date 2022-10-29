@@ -7,15 +7,10 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
-    name: Chromatic
+  with-babel-plugin:
+    name: Chromatic (with babel plugin)
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    #  TURBO_REMOTE_ONLY: true
 
     steps:
       - name: Check out code
@@ -38,7 +33,38 @@ jobs:
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
-          projectToken: 8269285adb0a
+          projectToken: 19f9e41ca7b7
           workingDir: examples/with-babel-plugin
+          exitOnceUploaded: true
+          ignoreLastBuildOnBranch: true
+
+  without-babel-plugin:
+    name: Chromatic (without babel plugin)
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: fbff17ee1545
+          workingDir: examples/without-babel-plugin
           exitOnceUploaded: true
           ignoreLastBuildOnBranch: true
