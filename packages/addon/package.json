@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-faker",
+  "name": "@storybook-addon-faker/addon",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -16,6 +16,9 @@
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "chromatic": "^6.11.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",
@@ -41,9 +44,7 @@
     "@storybook/core-events": "^6.5.8",
     "@storybook/theming": "^6.5.8",
     "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "storybook-addon-faker-babel-plugin": "*",
-    "seed-story": "*"
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
     "react": {

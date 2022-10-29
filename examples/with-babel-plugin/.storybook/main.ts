@@ -3,7 +3,7 @@ import { StorybookConfig } from "@storybook/react/types";
 import createConfig from "../../.storybook/main";
 
 const config: StorybookConfig = createConfig({
-  addons: ["storybook-addon-faker"],
+  addons: ["@storybook-addon-faker/addon"],
   webpackFinal: async (config) => {
     config.module = {
       ...config.module,
@@ -16,7 +16,7 @@ const config: StorybookConfig = createConfig({
       options: {
         plugins: [
           [
-            require.resolve("storybook-addon-faker-babel-plugin"),
+            require.resolve("@storybook-addon-faker/babel"),
             { seed: 634 },
           ],
         ],

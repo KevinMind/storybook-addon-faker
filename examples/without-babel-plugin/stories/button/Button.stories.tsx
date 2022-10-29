@@ -1,8 +1,8 @@
-import { seedStory } from "seed-story";
+import { seedStory } from "@storybook-addon-faker/addon";
+import { StoryObj } from "@storybook/react";
 import { faker } from "@faker-js/faker";
 
 import { Button } from "../../../.storybook/stories/button/Button";
-import * as Stories from "../../../.storybook/stories/button/Button.stories";
 
 export default {
   component: Button,
@@ -11,15 +11,35 @@ export default {
   },
 };
 
+type ButtonProps = React.ComponentProps<typeof Button>;
+
+function mockButtonProps(input: Partial<ButtonProps>): ButtonProps {
+  return {
+    label: faker.word.verb(),
+    size: faker.helpers.arrayElement<ButtonProps["size"]>([
+      "small",
+      "medium",
+      "large",
+    ]),
+    ...input,
+  };
+}
+
 const options = {
   faker,
   seed: 123,
 };
 
-export const Secondary = seedStory(() => Stories.Secondary, options);
+export const Seeded = seedStory(
+  () => ({
+    args: mockButtonProps({ primary: true }),
+  }),
+  options
+);
 
-export const Primary = seedStory(() => Stories.Primary, options);
-
-export const Large = seedStory(() => Stories.Large, options);
-
-export const Small = seedStory(() => Stories.Small, options);
+export const Random: StoryObj<ButtonProps> = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: mockButtonProps({ primary: true }),
+};
