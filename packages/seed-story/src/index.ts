@@ -1,19 +1,21 @@
 import { StoryObj } from "@storybook/react";
 import isChromatic from "chromatic/isChromatic";
 import type { Faker } from "@faker-js/faker";
-import { faker } from "@faker-js/faker/locale/en";
 
-// TODO: replace with environment variable or some configurable parameter
-const STORYBOOK_FAKER_SEED = 12345;
+interface Options {
+  faker: Faker;
+  seed: number;
+}
 
 export function seedStory<Args>(
-  getStoryObj: (faker: Faker) => StoryObj<Args> = () => ({})
+  getStoryObj: (faker: Faker) => StoryObj<Args> = () => ({}),
+  options: Options
 ): StoryObj<Args> {
   const isSeedActive = isChromatic();
 
   if (isSeedActive) {
-    faker.seed(STORYBOOK_FAKER_SEED);
+    options.faker.seed(options.seed);
   }
 
-  return getStoryObj(faker);
+  return getStoryObj(options.faker);
 }

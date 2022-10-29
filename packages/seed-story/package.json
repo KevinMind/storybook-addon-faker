@@ -9,7 +9,7 @@
     "dist/**"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "tsup src/index.ts --format cjs --dts --external @faker-js/faker",
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",

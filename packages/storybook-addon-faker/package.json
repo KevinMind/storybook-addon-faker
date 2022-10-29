@@ -10,7 +10,7 @@
     "dist/**"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests ",
     "build": "tsup src/** --format esm,cjs --external react",
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",

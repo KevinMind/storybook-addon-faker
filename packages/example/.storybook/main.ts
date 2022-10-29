@@ -1,6 +1,4 @@
-import path from "path";
 import { StorybookConfig } from "@storybook/react/types";
-import webpack from "webpack";
 
 const config: StorybookConfig = {
   stories: [
@@ -18,7 +16,7 @@ const config: StorybookConfig = {
       test: /.stories.(js|jsx|ts|tsx)$/,
       loader: "babel-loader",
       options: {
-        plugins: [require.resolve("storybook-addon-faker-babel-plugin")],
+        plugins: [[require.resolve("storybook-addon-faker-babel-plugin"), {seed: 634}]],
       },
     });
 
