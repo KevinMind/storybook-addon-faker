@@ -32,7 +32,7 @@ const options = {
 
 export const Seeded = seedStory(
   () => ({
-    args: mockButtonProps({ primary: false }),
+    args: mockButtonProps({ primary: true }),
   }),
   options
 );
