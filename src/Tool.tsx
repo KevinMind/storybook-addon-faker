@@ -3,7 +3,7 @@ import { useGlobals } from "@storybook/api";
 import { Icons, IconButton } from "@storybook/components";
 import { TOOL_ID } from "./constants";
 
-export const Tool = () => {
+export function Tool() {
   const [{ myAddon }, updateGlobals] = useGlobals();
 
   const toggleMyTool = useCallback(

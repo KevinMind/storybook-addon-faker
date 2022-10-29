@@ -1,31 +1,14 @@
-<!-- README START -->
+## Todo
+- [ ] fix imports in the storybook addon webpack config, use real imports
+- [ ] update package names
+- [ ] figure out deployment flow
+- [ ] add tests
+- [X] extract the storybook(s) from the storybook addon
+- [ ] extract faker import, seed value and isSeedActive functions to babel plugin params or webpack plugin params? or global functions
+- [ ] extract stories and components from examples to base example
 
-# Storybook Addon Kit
-
-Simplify the creation of Storybook addons
-
-- 📝 Live-editing in development
-- ⚛️ React/JSX support
-- 📦 Transpiling and bundling with Babel
-- 🏷 Plugin metadata
-- 🚢 Release management with [Auto](https://github.com/intuit/auto)
-- 🧺 Boilerplate and sample code
-- 🛄 ESM support
-- 🛂 TypeScript by default with option to eject to JS
-
-## Getting Started
-
-Click the **Use this template** button to get started.
-
-![](https://user-images.githubusercontent.com/321738/125058439-8d9ef880-e0aa-11eb-9211-e6d7be812959.gif)
-
-Clone your repository and install dependencies.
-
-```sh
-yarn
-```
-
-<!-- README END -->
+# Storybook Addon Storybook addon faker
+mock storybook data with a pre-seeded faker instance and control randomization from the ui
 
 ### Development scripts
 

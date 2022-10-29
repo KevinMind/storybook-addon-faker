@@ -1,14 +1,10 @@
 import React from "react";
 import { useAddonState, useChannel } from "@storybook/api";
-import { AddonPanel } from "@storybook/components";
+import { AddonPanel, AddonPanelProps } from "@storybook/components";
 import { ADDON_ID, EVENTS } from "./constants";
 import { PanelContent } from "./components/PanelContent";
 
-interface PanelProps {
-  active: boolean;
-}
-
-export const Panel: React.FC<PanelProps> = (props) => {
+export function Panel(props: AddonPanelProps) {
   // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
   const [results, setState] = useAddonState(ADDON_ID, {
     danger: [],
