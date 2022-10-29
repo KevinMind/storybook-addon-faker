@@ -117,7 +117,14 @@ export const Finance = {
 };
 
 export const Git = {
-  args: mapModule("git"),
+  args: mapModule("git", (key, func) => {
+    switch (key) {
+      case 'commitEntry':
+        return 'SKIPPING BECAUSE IT IS INCONSOLABLY RANDOM';
+      default:
+        return func();
+    }
+  }),
 };
 
 export const Hacker = {
