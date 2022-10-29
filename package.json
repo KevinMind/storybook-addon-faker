@@ -19,9 +19,7 @@
     "test": "turbo run test",
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
-    "chromatic": "turbo run chromatic",
-    "storybook:global": "start-storybook -p 4004",
-    "build-storybook:global": "build-storybook"
+    "chromatic": "turbo run chromatic"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -31,6 +29,7 @@
     "turbo": "^1.1.6"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ]
 }
