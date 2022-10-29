@@ -34,7 +34,6 @@ jobs:
           projectToken: 19f9e41ca7b7
           workingDir: examples/with-babel-plugin
           exitOnceUploaded: true
-          ignoreLastBuildOnBranch: true
 
   without-babel-plugin:
     name: Chromatic (without babel plugin)
@@ -63,4 +62,3 @@ jobs:
           projectToken: fbff17ee1545
           workingDir: examples/without-babel-plugin
           exitOnceUploaded: true
-          ignoreLastBuildOnBranch: true
