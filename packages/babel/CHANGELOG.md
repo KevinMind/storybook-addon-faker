@@ -1,5 +1,11 @@
 # (Sun Oct 30 2022)
 
+## 0.1.0
+
+### Minor Changes
+
+- af09fb1: Setting up changesets for releasing
+
 #### 🚀 Enhancement
 
 - chore(): use symbol to read state [#12](https://github.com/KevinMind/storybook-addon-faker/pull/12) ([@KevinMind](https://github.com/KevinMind))
