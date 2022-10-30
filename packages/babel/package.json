@@ -1,6 +1,6 @@
 {
   "name": "@storybook-addon-faker/babel",
-  "version": "0.0.3",
+  "version": "0.0.4--canary.463df01.0",
   "main": "./dist/index.js",
   "sideEffects": false,
   "license": "MIT",
@@ -34,5 +34,14 @@
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "auto": {
+    "plugins": [
+      "npm",
+      "all-contributors",
+      "conventional-commits",
+      "released"
+    ],
+    "onlyPublishWithReleaseLabel": true
+  }
 }
