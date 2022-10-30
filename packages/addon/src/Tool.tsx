@@ -3,16 +3,19 @@ import { useGlobals } from "@storybook/api";
 import { Icons, IconButton } from "@storybook/components";
 import { TOOL_ID } from "./constants";
 
+import seeded from "./symbol";
+
 export const Tool = () => {
   const [{ myAddon }, updateGlobals] = useGlobals();
 
-  const toggleMyTool = useCallback(
-    () =>
-      updateGlobals({
-        myAddon: myAddon ? undefined : true,
-      }),
-    [myAddon, updateGlobals]
-  );
+  const toggleMyTool = useCallback(() => {
+    const newValue = myAddon ? undefined : true;
+    updateGlobals({
+      myAddon: newValue,
+    });
+
+    (window as any)[seeded] = newValue;
+  }, [myAddon, updateGlobals]);
 
   return (
     <IconButton
