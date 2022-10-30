@@ -8,14 +8,10 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build, Test, Publish
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    #  TURBO_REMOTE_ONLY: true
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
 
     steps:
       - name: Check out code
@@ -34,24 +30,6 @@ jobs:
 
       - name: Test
         run: yarn run test
-
-  release:
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
-    needs: [build]
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
 
       - name: Create Release
         env:

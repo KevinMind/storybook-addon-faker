@@ -59,5 +59,12 @@
     "preset": "scripts/jest/node"
   },
   "repository": "KevinMind/storybook-addon-faker",
-  "author": "kevin meinhardt <kmeinhardt7@gmail.com>"
+  "author": "kevin meinhardt <kmeinhardt7@gmail.com>",
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ],
+    "onlyPublishWithReleaseLabel": true
+  }
 }
