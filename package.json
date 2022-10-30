@@ -21,7 +21,8 @@
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
     "chromatic": "turbo run chromatic",
-    "release": "yarn build && yarn changeset publish"
+    "release": "yarn build && yarn changeset publish",
+    "version": "yarn changeset"
 
   },
   "devDependencies": {
