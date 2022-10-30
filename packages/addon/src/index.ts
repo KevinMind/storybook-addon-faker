@@ -11,7 +11,7 @@ interface Options {
 
 export function seedStory<Args>(
   getStoryObj: (faker: Faker) => StoryObj<Args> = () => ({}),
-  { faker, seed }: Options
+  options: Options
 ): StoryObj<Args> {
   const isSeedActive = isChromatic();
 
@@ -21,8 +21,8 @@ export function seedStory<Args>(
   });
 
   if (isSeedActive) {
-    faker.seed(seed);
+    options.faker.seed(options.seed);
   }
 
-  return getStoryObj(faker);
+  return getStoryObj(options.faker);
 }
