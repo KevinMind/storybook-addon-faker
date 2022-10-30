@@ -88,7 +88,20 @@ export const DataTypeField = {
 };
 
 export const Date = {
-  args: mapModule("date"),
+  args: mapModule("date", (key, func) => {
+    switch (key) {
+      case 'future':
+      case 'past':
+      case 'soon':
+      case 'recent':
+        return func(10, '2020-01-01T00:00:00.000Z');
+      case 'between':
+      case 'betweens':
+        return func('2020-01-01T00:00:00.000Z', '2030-01-01T00:00:00.000Z');
+      default:
+        return func();
+    }
+  }),
 };
 
 export const Fake = {
@@ -104,7 +117,14 @@ export const Finance = {
 };
 
 export const Git = {
-  args: mapModule("git"),
+  args: mapModule("git", (key, func) => {
+    switch (key) {
+      case 'commitEntry':
+        return 'SKIPPING BECAUSE IT IS INCONSOLABLY RANDOM';
+      default:
+        return func();
+    }
+  }),
 };
 
 export const Hacker = {

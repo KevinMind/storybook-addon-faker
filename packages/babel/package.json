@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-faker-babel-plugin",
+  "name": "@storybook-addon-faker/babel",
   "version": "0.0.3",
   "main": "./dist/index.js",
   "sideEffects": false,

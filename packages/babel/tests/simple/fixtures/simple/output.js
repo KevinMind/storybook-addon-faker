@@ -1,4 +1,4 @@
-import { seedStory } from "seed-story";
+import { seedStory } from "@storybook-addon-faker/addon";
 import { faker } from "@faker-js/faker";
 export const Default = seedStory(
   () => ({
@@ -8,6 +8,6 @@ export const Default = seedStory(
   }),
   {
     faker: faker,
-    seed: 123,
+    seed: 999,
   }
 );

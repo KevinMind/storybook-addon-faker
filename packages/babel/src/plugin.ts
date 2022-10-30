@@ -29,16 +29,14 @@ export default function storybookAddonFakerBabelPlugin({
   };
 
   return {
-    name: "storybook-addon-faker-babel-plugin",
+    name: "@storybook-addon-faker/babel",
     manipulateOptions(opts) {
       const pluginOptions = opts.plugins.find(
         (plugin: { key: string }) =>
-          plugin.key === "storybook-addon-faker-babel-plugin"
+          plugin.key === "@storybook-addon-faker/babel"
       ).options as any;
 
       const fakerOption = pluginOptions[OptionKeys.Faker];
-
-      console.log({ pluginOptions });
 
       if (typeof fakerOption === "string") {
         options[OptionKeys.Faker] = fakerOption;
@@ -59,7 +57,7 @@ export default function storybookAddonFakerBabelPlugin({
           );
           const importDeclaration = t.importDeclaration(
             [importSeedStorybook],
-            t.stringLiteral("seed-story")
+            t.stringLiteral("@storybook-addon-faker/addon")
           );
 
           path.unshiftContainer("body", importDeclaration);

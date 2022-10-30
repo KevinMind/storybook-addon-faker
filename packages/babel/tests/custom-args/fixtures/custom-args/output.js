@@ -1,10 +1,8 @@
 import { faker } from "@faker-js/faker/locales/en";
-import { seedStory } from "seed-story";
+import { seedStory } from "@storybook-addon-faker/addon";
 export const Default = seedStory(
   () => ({
-    args: {
-      loading: false,
-    },
+    args: {},
   }),
   {
     faker: faker,
