@@ -16,7 +16,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          ref: ${{github.event.pull_request.head.sha}}
+          fetch-depth: 0
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
@@ -29,3 +30,7 @@ jobs:
 
       - name: Test
         run: yarn run test
+
+      - name: Changeset
+        run: |
+          yarn changeset status --since origin/main

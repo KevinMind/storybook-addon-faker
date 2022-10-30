@@ -19,7 +19,7 @@ export default function storybookAddonFakerBabelPlugin({
   types: t,
 }: Babel): PluginObj {
   const seedStoryIdentifier = t.identifier("seedStory");
-  const fakerSpecifier = t.identifier("faker");
+  const fakerIdentifier = t.identifier("faker");
 
   const FakerImportedSet = new Set();
 
@@ -63,7 +63,7 @@ export default function storybookAddonFakerBabelPlugin({
           path.unshiftContainer("body", importDeclaration);
         },
         exit(path, state) {
-          const importFaker = t.importSpecifier(fakerSpecifier, fakerSpecifier);
+          const importFaker = t.importSpecifier(fakerIdentifier, fakerIdentifier);
           const importFakerDeclaration = t.importDeclaration(
             [importFaker],
             t.stringLiteral(options.faker)
@@ -100,7 +100,7 @@ export default function storybookAddonFakerBabelPlugin({
             const seedStoryOptions = t.objectExpression([
               t.objectProperty(
                 t.stringLiteral(OptionKeys.Faker),
-                fakerSpecifier
+                fakerIdentifier
               ),
               t.objectProperty(
                 t.stringLiteral(OptionKeys.Seed),

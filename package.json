@@ -21,9 +21,7 @@
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
     "chromatic": "turbo run chromatic",
-    "release": "yarn build && yarn changeset publish",
-    "version": "yarn changeset"
-
+    "release": "yarn build && yarn changeset publish"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^10.37.6",
