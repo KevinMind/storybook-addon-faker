@@ -14,8 +14,7 @@
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "release": "auto shipit"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",

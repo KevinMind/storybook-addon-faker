@@ -17,11 +17,12 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "release": "turbo run release",
     "test": "turbo run test",
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
-    "chromatic": "turbo run chromatic"
+    "chromatic": "turbo run chromatic",
+    "release": "yarn build && yarn changeset publish"
+
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^10.37.6",
