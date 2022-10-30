@@ -35,6 +35,9 @@
       "dependsOn": ["^build"],
       "cache": false
     },
+    "changelog": {
+      "cache": false
+    },
     "release": {
       "dependsOn": ["^build"],
       "cache": false

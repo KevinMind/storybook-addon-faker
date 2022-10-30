@@ -17,6 +17,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
+    "changelog": "turbo run changelog",
     "release": "turbo run release",
     "test": "turbo run test",
     "storybook": "turbo run storybook",
