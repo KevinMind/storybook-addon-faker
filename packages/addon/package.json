@@ -15,7 +15,8 @@
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "release": "auto shipit"
   },
   "dependencies": {
     "chromatic": "^6.11.2"
@@ -56,5 +57,16 @@
   },
   "jest": {
     "preset": "scripts/jest/node"
+  },
+  "repository": "KevinMind/storybook-addon-faker",
+  "author": "kevin meinhardt <kmeinhardt7@gmail.com>",
+  "auto": {
+    "plugins": [
+      "npm",
+      "all-contributors",
+      "conventional-commits",
+      "released"
+    ],
+    "onlyPublishWithReleaseLabel": true
   }
 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "ES2015"],
-    "jsx": "react"
+    "module": "commonjs"
   },
   "extends": "tsconfig/react-library.json",
   "include": [".", ".eslintrc.js", "../.storybook"],

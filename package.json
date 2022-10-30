@@ -17,6 +17,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
+    "release": "turbo run release",
     "test": "turbo run test",
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "auto": "^10.37.6",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.11.2",
     "deepmerge": "^4.2.2",

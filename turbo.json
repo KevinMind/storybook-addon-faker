@@ -34,6 +34,10 @@
     "chromatic": {
       "dependsOn": ["^build"],
       "cache": false
+    },
+    "release": {
+      "dependsOn": ["^build"],
+      "cache": false
     }
   }
 }
