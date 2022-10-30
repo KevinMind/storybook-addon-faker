@@ -28,6 +28,7 @@
     "@auto-it/conventional-commits": "^10.37.6",
     "@auto-it/released": "^10.37.6",
     "@babel/core": "^7.17.8",
+    "@changesets/cli": "^2.25.1",
     "auto": "^10.37.6",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.11.2",
