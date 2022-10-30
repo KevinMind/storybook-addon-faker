@@ -63,8 +63,6 @@
   "auto": {
     "plugins": [
       "npm",
-      "all-contributors",
-      "conventional-commits",
       "released"
     ],
     "onlyPublishWithReleaseLabel": true
