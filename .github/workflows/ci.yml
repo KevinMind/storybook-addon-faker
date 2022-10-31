@@ -30,3 +30,7 @@ jobs:
 
       - name: Test
         run: yarn run test
+
+      - name: Changeset
+        run: |
+          yarn changeset status --since origin/main
