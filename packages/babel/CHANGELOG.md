@@ -1,5 +1,11 @@
 # (Sun Oct 30 2022)
 
+## 0.3.1
+
+### Patch Changes
+
+- fcb9eac: remove auto and include preset.js in the addon package
+
 ## 0.3.0
 
 ### Minor Changes
