@@ -8,7 +8,9 @@
   "sideEffects": false,
   "license": "MIT",
   "files": [
-    "dist/**"
+    "dist/**/*",
+    "*.js",
+    "*.d.ts"
   ],
   "scripts": {
     "test": "jest --passWithNoTests ",
