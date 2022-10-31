@@ -32,5 +32,8 @@ jobs:
         run: yarn run test
 
       - name: Changeset
+        if: ${{ !contains(github.head_ref, 'changeset-release/main') }}
         run: |
+          echo ${{github.head_ref}}
+          echo ${{ !contains(github.head_ref, 'changeset-release/main') }}
           yarn changeset status --since origin/main
