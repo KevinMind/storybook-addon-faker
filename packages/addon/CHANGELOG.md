@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.4.0
+
+### Minor Changes
+
+- fcb9eac: remove auto and include preset.js in the addon package
+
 ## 0.3.2
 
 ### Patch Changes
