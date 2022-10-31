@@ -34,12 +34,5 @@
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "type": "commonjs",
-  "auto": {
-    "plugins": [
-      "npm",
-      "released"
-    ],
-    "onlyPublishWithReleaseLabel": true
-  }
+  "type": "commonjs"
 }
