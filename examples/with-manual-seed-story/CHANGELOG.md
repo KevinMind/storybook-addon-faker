@@ -1,4 +1,4 @@
-# without-babel-plugin
+# with-manual-seed-story
 
 ## 0.0.5
 

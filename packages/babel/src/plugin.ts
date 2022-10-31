@@ -10,7 +10,7 @@ export enum OptionKeys {
   Seed = "seed",
 }
 
-interface Options {
+export interface Options {
   [OptionKeys.Faker]: string;
   [OptionKeys.Seed]: number;
 }

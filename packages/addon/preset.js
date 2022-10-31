@@ -1,3 +1,5 @@
+const preset = require("./dist/preset");
+
 function config(entry = []) {
   return [...entry, require.resolve("./dist/preset/preview")];
 }
@@ -7,6 +9,7 @@ function managerEntries(entry = []) {
 }
 
 module.exports = {
+  ...preset,
   managerEntries,
   config,
 };

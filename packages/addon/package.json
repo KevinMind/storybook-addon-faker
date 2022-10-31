@@ -14,13 +14,14 @@
   ],
   "scripts": {
     "test": "jest --passWithNoTests ",
-    "build": "tsup src/** --format esm,cjs --external react",
+    "build": "tsup src/** --format esm,cjs --external react --external @storybook-addon-faker/babel",
     "dev": "yarn build --watch",
     "lint": "TIMING=1 eslint src",
     "format": "yarn lint --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
+    "@storybook/node-logger": "^6.5.13",
     "chromatic": "^6.11.2"
   },
   "devDependencies": {
