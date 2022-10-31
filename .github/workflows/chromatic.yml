@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  with-babel-plugin:
+  with-addon:
     name: Chromatic (with babel plugin)
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -34,10 +34,10 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: 19f9e41ca7b7
-          workingDir: examples/with-babel-plugin
+          workingDir: examples/with-addon
           exitOnceUploaded: true
 
-  without-babel-plugin:
+  with-manual-seed-story:
     name: Chromatic (without babel plugin)
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -64,5 +64,5 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: fbff17ee1545
-          workingDir: examples/without-babel-plugin
+          workingDir: examples/with-manual-seed-story
           exitOnceUploaded: true
