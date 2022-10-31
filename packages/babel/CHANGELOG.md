@@ -1,5 +1,11 @@
 # (Sun Oct 30 2022)
 
+## 0.3.0
+
+### Minor Changes
+
+- ed78e2d: Adding check for changes into CI
+
 ## 0.2.0
 
 ### Minor Changes
