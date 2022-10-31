@@ -1,5 +1,12 @@
 # without-babel-plugin
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [db673fe]
+  - @storybook-addon-faker/addon@0.3.1
+
 ## 0.0.2
 
 ### Patch Changes
