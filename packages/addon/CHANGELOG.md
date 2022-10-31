@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.3.2
+
+### Patch Changes
+
+- 40f71e4: revert the ci skip commit
+
 ## 0.3.1
 
 ### Patch Changes
