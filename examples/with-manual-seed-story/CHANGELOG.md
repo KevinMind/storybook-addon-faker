@@ -1,5 +1,12 @@
 # with-manual-seed-story
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [1f52b3e]
+  - @storybook-addon-faker/addon@0.5.0
+
 ## 0.0.5
 
 ### Patch Changes

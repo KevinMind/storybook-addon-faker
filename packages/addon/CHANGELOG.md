@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.5.0
+
+### Minor Changes
+
+- 1f52b3e: remove addon code until solution is found, add webpack config to addon
+
 ## 0.4.0
 
 ### Minor Changes
