@@ -62,5 +62,20 @@
     "preset": "scripts/jest/node"
   },
   "repository": "KevinMind/storybook-addon-faker",
-  "author": "kevin meinhardt <kmeinhardt7@gmail.com>"
+  "author": "kevin meinhardt <kmeinhardt7@gmail.com>",
+  "keywords": [
+    "addon",
+    "storybook",
+    "faker",
+    "mock",
+    "essentials",
+    "data-state"
+  ],
+  "storybook": {
+    "displayName": "Storybook addon faker",
+    "supportedFrameworks": [
+      "react"
+    ],
+    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  }
 }
