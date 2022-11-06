@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.5.1
+
+### Patch Changes
+
+- 292ff8a: add documentation
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,13 @@
 # with-typescript-node-api
 
+## 0.0.7
+
+### Patch Changes
+
+- 292ff8a: add documentation
+- Updated dependencies [292ff8a]
+  - @storybook-addon-faker/addon@0.5.1
+
 ## 0.0.6
 
 ### Patch Changes
