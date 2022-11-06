@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.5.3
+
+### Patch Changes
+
+- 4149cad: add link to main readme
+
 ## 0.5.2
 
 ### Patch Changes
