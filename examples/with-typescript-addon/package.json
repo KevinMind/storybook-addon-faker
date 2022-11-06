@@ -1,6 +1,6 @@
 {
   "name": "with-typescript-addon",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -32,7 +32,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "scripts": "*",
-    "@storybook-addon-faker/addon": "^0.5.0",
+    "@storybook-addon-faker/addon": "^0.5.1",
     "@storybook-addon-faker/babel": "^0.3.1",
     "tsconfig": "*",
     "tsup": "^5.10.1",
