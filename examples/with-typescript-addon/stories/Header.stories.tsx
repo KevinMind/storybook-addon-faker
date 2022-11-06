@@ -1,8 +1,7 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { mockUser } from "../user";
-import { Header } from "./Header";
+import { mockUser } from "./user";
+import { Header } from "../../_components/header/Header";
 
 const meta: Meta<typeof Header> = {
   component: Header,

@@ -1,7 +1,6 @@
-import React from "react";
 import { faker } from "@faker-js/faker/locale/de";
 
-import { Button } from "./Button";
+import { Button } from "../../_components/button/Button";
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
