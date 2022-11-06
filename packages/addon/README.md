@@ -1,6 +1,6 @@
 # @storybook-addon-faker/addon
 
-The storybook addon and node api.
+The storybook addon and node api. For the addon documentation, see [README](../../README.md)
 
 ## API
 
@@ -59,9 +59,9 @@ Now, `seedStory` can delay defining your story object until after the seed has b
 
 `options.faker`
 
-| Type | Default value |
-| --- | --- |
-| Faker | undefindd |
+| Type  | Default value |
+|-------|---------------|
+| Faker | undefindd     |
 
 The faker instance to set a seed on. This should be the same faker instance you are using to define the values for your story.
 
@@ -86,9 +86,9 @@ export const Default = seedStory(() => ({
 
 `options.seed`
 
-| Type | Default value | Description |
-| --- | --- | --- |
-| number | 0 | The seed to set on faker |
+| Type   | Default value | Description              |
+|--------|---------------|--------------------------|
+| number | 0             | The seed to set on faker |
 
 This is the seed to set on faker before rendering your story.
 
