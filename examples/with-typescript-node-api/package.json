@@ -1,6 +1,6 @@
 {
   "name": "with-typescript-node-api",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@storybook-addon-faker/addon": "0.5.1"
+    "@storybook-addon-faker/addon": "0.5.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",

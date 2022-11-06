@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.5.2
+
+### Patch Changes
+
+- 1e9df58: add to storybook catalog
+
 ## 0.5.1
 
 ### Patch Changes
