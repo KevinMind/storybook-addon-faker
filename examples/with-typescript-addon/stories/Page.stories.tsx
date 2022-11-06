@@ -1,10 +1,10 @@
+import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { rest } from "msw";
 import { within, userEvent } from "@storybook/testing-library";
 
-import { Page } from "./Page";
-import { User, mockUser } from "../user";
-import { ComponentProps } from "react";
+import { Page } from "../../_components/page/Page";
+import { User, mockUser } from "./user";
 
 const meta: Meta<typeof Page> = {
   component: Page,

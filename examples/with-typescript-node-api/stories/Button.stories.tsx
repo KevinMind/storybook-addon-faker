@@ -2,7 +2,7 @@ import { seedStory } from "@storybook-addon-faker/addon";
 import { StoryObj } from "@storybook/react";
 import { faker } from "@faker-js/faker";
 
-import { Button } from "../../../.storybook/stories/button/Button";
+import { Button } from "../../_components/button/Button";
 
 export default {
   component: Button,

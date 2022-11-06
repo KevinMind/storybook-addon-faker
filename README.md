@@ -1,101 +1,120 @@
-## Todo
-- [ ] fix imports in the storybook addon webpack config, use real imports
-- [ ] update package names
-- [ ] figure out deployment flow
-- [ ] add tests
-- [X] extract the storybook(s) from the storybook addon
-- [ ] extract faker import, seed value and isSeedActive functions to babel plugin params or webpack plugin params? or global functions
-- [ ] extract stories and components from examples to base example
+[![npm version](https://badge.fury.io/js/angular2-expandable-list.svg)](https://badge.fury.io/js/angular2-expandable-list)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-# Storybook Addon Storybook addon faker
-mock storybook data with a pre-seeded faker instance and control randomization from the ui
+# Storybook addon faker
 
-### Development scripts
+A storybook addon enabling faker usage in story (CSF) objects with *magic* seeding powers.
 
-- `yarn start` runs babel in watch mode and starts Storybook
-- `yarn build` build and package your addon code
+Use faker methods to define randomized and realistic mock data for your stories. Each time you load a story while
+developing, faker will use a new unique value. This is wonderful for developing robust UI components as static mock
+data tends to fall short of the dynamic world of real data your components will receive in the wild.
 
-### Switch from TypeScript to JavaScript
+But why do I need an addon? I can just use faker methods directly.
 
-Don't want to use TypeScript? We offer a handy eject command: `yarn eject-ts`
+Exactly, and using this addon doesn't change the way you use faker. Just call faker methods as usual when defining stories.
+But, when you render your stories in a visual testing context (e.g. chromatic) calls to faker will be automatically seeded,
+per story, ensuring that the data used to render your story is consistent across builds.
+This ensures the only pixel diffs are due to your code and not varying test data. You get the best of both worlds.
 
-This will convert all code to JS. It is a destructive process, so we recommended running this before you start writing any code.
+Dynamic while developing, static while testing!
 
-## What's included?
+## Prerequisites
 
-![Demo](https://user-images.githubusercontent.com/42671/107857205-e7044380-6dfa-11eb-8718-ad02e3ba1a3f.gif)
+This project assumes you are using storybook already. It also assumes you are defining stories with CSF v3 story object
+format. Finally it assumes you have `@faker-js/faker` installed.
 
-The addon code lives in `src`. It demonstrates all core addon related concepts. The three [UI paradigms](https://storybook.js.org/docs/react/addons/addon-types#ui-based-addons)
+## Table of contents
 
-- `src/Tool.js`
-- `src/Panel.js`
-- `src/Tab.js`
+- [Storybook addon faker](#storybook-addon-faker)
+  - [Prerequisites](#prerequisites)
+  - [Table of contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Using via the addon](#using-via-the-addon)
+    - [Using via the node API](#using-via-the-node-api)
+      - [Examples](#examples)
+  - [Contributing](#contributing)
+  - [Credits](#credits)
+  - [Versioning](#versioning)
+  - [Authors](#authors)
+  - [License](#license)
 
-Which, along with the addon itself, are registered in `src/preset/manager.js`.
+## Getting Started
 
-Managing State and interacting with a story:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-- `src/withGlobals.js` & `src/Tool.js` demonstrates how to use `useGlobals` to manage global state and modify the contents of a Story.
-- `src/withRoundTrip.js` & `src/Panel.js` demonstrates two-way communication using channels.
-- `src/Tab.js` demonstrates how to use `useParameter` to access the current story's parameters.
+## Installation
 
-Your addon might use one or more of these patterns. Feel free to delete unused code. Update `src/preset/manager.js` and `src/preset/preview.js` accordingly.
+**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 
-Lastly, configure you addon name in `src/constants.js`.
-
-### Metadata
-
-Storybook addons are listed in the [catalog](https://storybook.js.org/addons) and distributed via npm. The catalog is populated by querying npm's registry for Storybook-specific metadata in `package.json`. This project has been configured with sample data. Learn more about available options in the [Addon metadata docs](https://storybook.js.org/docs/react/addons/addon-catalog#addon-metadata).
-
-## Release Management
-
-### Setup
-
-This project is configured to use [auto](https://github.com/intuit/auto) for release management. It generates a changelog and pushes it to both GitHub and npm. Therefore, you need to configure access to both:
-
-- [`NPM_TOKEN`](https://docs.npmjs.com/creating-and-viewing-access-tokens#creating-access-tokens) Create a token with both _Read and Publish_ permissions.
-- [`GH_TOKEN`](https://github.com/settings/tokens) Create a token with the `repo` scope.
-
-Then open your `package.json` and edit the following fields:
-
-- `name`
-- `author`
-- `repository`
-
-#### Local
-
-To use `auto` locally create a `.env` file at the root of your project and add your tokens to it:
-
-```bash
-GH_TOKEN=<value you just got from GitHub>
-NPM_TOKEN=<value you just got from npm>
-```
-
-Lastly, **create labels on GitHub**. You’ll use these labels in the future when making changes to the package.
-
-```bash
-npx auto create-labels
-```
-
-If you check on GitHub, you’ll now see a set of labels that `auto` would like you to use. Use these to tag future pull requests.
-
-#### GitHub Actions
-
-This template comes with GitHub actions already set up to publish your addon anytime someone pushes to your repository.
-
-Go to `Settings > Secrets`, click `New repository secret`, and add your `NPM_TOKEN`.
-
-### Creating a release
-
-To create a release locally you can run the following command, otherwise the GitHub action will make the release for you.
+To install and set up the addon, run:
 
 ```sh
-yarn release
+$ npm install @storybook-addon-faker/addon -D
 ```
 
-That will:
+Or if you prefer using Yarn:
 
-- Build and package the addon code
-- Bump the version
-- Push a release to GitHub and npm
-- Push a changelog to GitHub
+```sh
+$ yarn add @storybook-addon-faker/addon -D
+```
+
+## Usage
+
+This package is shipped with storybook addon and companion babel plugin. You can use the addon for batteries included
+setup, or import the library yourself and add per story.
+
+### Using via the addon
+
+Add `@storybook-addon-faker/addon` to you storybook addons in `.storybook/main.(js|ts)
+
+```js
+module.exports = {
+  ... // storybook config
+  addons: ["@storybook-addon-faker/addon"],
+};
+
+```
+
+That's it. This will automatically include the babel plugin to your storybook webpack configuration,
+wrapping all story objects in the `seedStory` wrapper giving you all the benefits of this addon with zero config.
+
+Define some stories using faker anywhere in the story object definition.
+
+### Using via the node API
+
+See addon [README](./packages/addon/README.md) for node api.
+
+#### Examples
+
+See the [examples](./examples/) folder for specific example implementations
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Add your changes: `git add .`
+4.  Commit your changes: `git commit -am 'Add some feature'`
+5.  Push to the branch: `git push origin my-new-feature`
+6.  Submit a pull request :sunglasses:
+
+## Credits
+
+TBD
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/kevinmind/storybook-addon-faker/tags).
+
+## Authors
+
+* **Kevin Mind** - *Initial work* - [KevinMind](https://github.com/kevinmind)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+[MIT License](https://andreasonny.mit-license.org/2019) © Andrea SonnY

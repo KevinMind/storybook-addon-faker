@@ -1,4 +1,4 @@
-# with-manual-seed-story
+# with-typescript-node-api
 
 ## 0.0.6
 
