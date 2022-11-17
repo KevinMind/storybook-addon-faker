@@ -30,11 +30,17 @@
     "chromatic": "^6.11.2",
     "deepmerge": "^4.2.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.2",
     "plop": "^3.0.5",
-    "turbo": "^1.1.6"
+    "turbo": "^1.1.6",
+    "zx": "^7.1.1"
   },
   "workspaces": [
     "packages/*",
     "examples/*"
-  ]
+  ],
+  "engines": {
+    "yarn": ">=1.22.19",
+    "node": ">=16.0.0 <17.0.0"
+  }
 }
