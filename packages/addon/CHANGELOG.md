@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.5.4
+
+### Patch Changes
+
+- 5427a9a: add readme sync to ensure docs are on npm page
+
 ## 0.5.3
 
 ### Patch Changes

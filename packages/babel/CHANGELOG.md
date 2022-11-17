@@ -1,5 +1,11 @@
 # (Sun Oct 30 2022)
 
+## 0.3.2
+
+### Patch Changes
+
+- 5427a9a: add readme sync to ensure docs are on npm page
+
 ## 0.3.1
 
 ### Patch Changes
