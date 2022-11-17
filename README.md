@@ -32,7 +32,11 @@ format. Finally it assumes you have `@faker-js/faker` installed.
   - [Installation](#installation)
   - [Usage](#usage)
     - [Using via the addon](#using-via-the-addon)
+      - [@storybook-addon-faker/babel](#storybook-addon-fakerbabel)
     - [Using via the node API](#using-via-the-node-api)
+      - [seedStory](#seedstory)
+        - [GetStory()](#getstory)
+        - [Options](#options)
       - [Examples](#examples)
   - [Contributing](#contributing)
   - [Credits](#credits)
@@ -82,9 +86,131 @@ wrapping all story objects in the `seedStory` wrapper giving you all the benefit
 
 Define some stories using faker anywhere in the story object definition.
 
+```tsx
+export const Default = {
+  args: {
+    loading: faker.datatype.boolean(),
+  },
+};
+```
+
+When you run this story locally, the value of `Default.args.loading` will randomly switch between `true` and `false`
+each time the story module is loaded. If you refresh the page you will see it switch back and forth. But, if you add
+
+`?chromatic=true` to the URL of the storybook browser window, the value will lock into either `true` or `false` and will
+always return the same value.
+
+#### @storybook-addon-faker/babel
+
+TBD: add docs for babel plugin
+
 ### Using via the node API
 
-See addon [README](./packages/addon/README.md) for node api.
+#### seedStory
+
+```tsx
+import {StoryObj} from "@storybook/react";
+
+type GetStory = () => StoryObj;
+
+interface Options {
+  faker: Faker;
+  seed: number;
+}
+
+function seedStory(GetStory, Options);
+```
+
+`seedStory` accepts two argumentss, a function callback `GetStory` and a configuration object `Options`.
+
+##### GetStory()
+
+Seed story accepts a callback function to define your `StoryObj` and wrap calls to `faker` in a seed. This allows each
+story to have a unique set of seeded values returned from all calls to faker when the seed is enabled.
+
+If you have a story object defined:
+
+```js
+export const Default = {
+  args: {
+    loading: faker.datatype.boolean(),
+  },
+};
+
+```
+
+Then you would wrap this story with `seedStory` like:
+
+```js
+export const seedStory(() => ({
+  args: {
+    loading: faker.datatype.boolean(),
+  },
+}), {
+  faker: myFaker,
+  seed: 123,
+});
+
+```
+
+Now, `seedStory` can delay defining your story object until after the seed has been set. This is the magic.
+
+##### Options
+
+`options.faker`
+
+| Type  | Default value |
+|-------|---------------|
+| Faker | undefindd     |
+
+The faker instance to set a seed on. This should be the same faker instance you are using to define the values for your story.
+
+Example:
+
+```tsx
+import {faker} from '@faker-js/locales/de';
+import {Card} from './Card';
+
+export default {component: Card} as Meta<typeof Card>;
+
+export const Default = seedStory(() => ({
+  args: {
+    loading: faker.datatype.boolean(),
+  },
+}), {
+  faker,
+  seed: 123
+});
+
+```
+
+`options.seed`
+
+| Type   | Default value | Description              |
+|--------|---------------|--------------------------|
+| number | 0             | The seed to set on faker |
+
+This is the seed to set on faker before rendering your story.
+
+Example:
+
+```tsx
+
+import {faker} from '@faker-js/locales/de';
+import {Card} from './Card';
+
+export default {component: Card} as Meta<typeof Card>;
+
+export const Default = seedStory(() => ({
+  args: {
+    loading: faker.datatype.boolean(),
+  },
+}), {
+  faker,
+  // Set `faker.seed(123) before calling the internal callback to render `<Card />`
+  seed: 123
+});
+```
 
 #### Examples
 
