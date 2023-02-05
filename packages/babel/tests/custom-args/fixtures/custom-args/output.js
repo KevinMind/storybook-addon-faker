@@ -7,5 +7,6 @@ export const Default = seedStory(
   {
     faker: faker,
     seed: 123,
+    banana: true,
   }
 );
