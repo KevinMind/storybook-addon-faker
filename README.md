@@ -23,6 +23,8 @@ Dynamic while developing, static while testing!
 This project assumes you are using storybook already. It also assumes you are defining stories with CSF v3 story object
 format. Finally it assumes you have `@faker-js/faker` installed.
 
+This project supports node versions 16-19 and aims to support LTS versions.
+
 ## Table of contents
 
 - [Storybook addon faker](#storybook-addon-faker)
