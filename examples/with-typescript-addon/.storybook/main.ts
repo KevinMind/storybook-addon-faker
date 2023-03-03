@@ -8,7 +8,7 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-essentials",
     {
-      name: "@storybook-addon-faker/addon",
+      name: "storybook-addon-faker",
       options: {
         seed: 634,
         faker: "@faker-js/faker",

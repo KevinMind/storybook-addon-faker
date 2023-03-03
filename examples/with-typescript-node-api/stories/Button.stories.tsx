@@ -1,4 +1,4 @@
-import { seedStory } from "@storybook-addon-faker/addon";
+import { seedStory } from "storybook-addon-faker";
 import { StoryObj } from "@storybook/react";
 import { faker } from "@faker-js/faker";
 
@@ -30,7 +30,7 @@ const options = {
   seed: 123,
 };
 
-export const Seeded = seedStory(
+export const Seeded = seedStory<ButtonProps>(
   () => ({
     args: mockButtonProps({ primary: true }),
   }),

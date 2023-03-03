@@ -32,8 +32,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "scripts": "*",
-    "@storybook-addon-faker/addon": "^0.5.1",
-    "@storybook-addon-faker/babel": "^0.3.1",
+    "storybook-addon-faker": "^0.5.1",
     "tsconfig": "*",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"
