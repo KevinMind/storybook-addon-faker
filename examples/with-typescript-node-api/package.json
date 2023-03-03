@@ -17,7 +17,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@storybook-addon-faker/addon": "0.5.4"
+    "storybook-addon-faker": "0.5.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",

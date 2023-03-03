@@ -21,7 +21,8 @@
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
     "chromatic": "turbo run chromatic",
-    "release": "yarn build && yarn changeset publish"
+    "release": "yarn build && yarn changeset publish",
+    "run-script": "yarn run zx"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -41,6 +42,6 @@
   ],
   "engines": {
     "yarn": ">=1.22.19",
-    "node": ">=16.0.0 <=19.6.0"
+    "node": ">=16.0.0 <=19.7.0"
   }
 }
