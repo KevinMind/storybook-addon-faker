@@ -67,6 +67,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, changeset]
     if: always()
+    branches-ignore:
+      - "changeset-release/main"
     steps:
       - name: Successful build
         if: ${{ !(contains(needs.*.result, 'failure')) }}
