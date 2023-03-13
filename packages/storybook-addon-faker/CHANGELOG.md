@@ -1,5 +1,11 @@
 # @storybook-addon-faker/addon
 
+## 0.6.0
+
+### Minor Changes
+
+- 354693a: merge storybook-addon-faker to one package with vite build
+
 ## 0.5.4
 
 ### Patch Changes
